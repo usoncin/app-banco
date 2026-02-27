@@ -5,13 +5,11 @@ services:
     image: mysql:8
     restart: always
     ports:
-      - 3306:3306
+      - 33066:3306
     environment:
       LANG: C.UTF-8
       MYSQL_ROOT_PASSWORD: example
       MYSQL_DATABASE: ${DB_NAME}
-      MYSQL_USER: ${DB_USER}
-      MYSQL_PASSWORD: ${DB_PASSWORD}
     volumes:
       - ./bbdd/mysql:/var/lib/mysql
       - ./bbdd/initData:/docker-entrypoint-initdb.d
